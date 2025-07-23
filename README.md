@@ -127,7 +127,7 @@ http://ab1cb9de95b9a4850839565e344ebcb8-655966472.ap-southeast-2.elb.amazonaws.c
 
 ---
 
-📄 **Proof of Work**
+ **Proof of Work**
 
 All steps, screenshots, and execution timestamps are available in the following PDF:
 
