@@ -1,6 +1,12 @@
 # Hello Eyego - Node.js App Deployment (Manual & Automated via Jenkins)
 
-## Manual Deployment Steps
+> **Note:** I am using a `t2.medium` EC2 instance for the EKS cluster. I already have this an existing deployed URL,but because of bill reason i have stopped this resources which I will share after you review my submission. Once confirmed, Just let me Know through Mail I will execute the Jenkins pipeline that will create the Kubernetes pod and expose it via a LoadBalancer DNS. The new DNS URL will be shared with you, and you'll be able to access the app using it.
+>
+> Please note: I have temporarily stopped the EKS resources because my AWS billing increased significantly. For full verification, please refer to the PDF linked at the end of this README, where I have shown all steps with screenshots and timestamps.
+
+---
+
+##  Manual Deployment Steps
 
 ### 1. Launch EC2 and Install Docker
 
@@ -8,7 +14,7 @@
 * Installed Docker:
 
   ```bash
-  sudo yum update -y 
+  sudo yum update -y
   sudo yum install docker -y
   sudo service docker start
   sudo usermod -aG docker ec2-user
@@ -44,7 +50,7 @@ docker run -d -p 8080:3000 nodejs-app
 
 ---
 
-## Push Image to Docker Hub
+##  Push Image to Docker Hub
 
 ```bash
 docker login
@@ -54,7 +60,7 @@ docker push ritesh605/nodejs-app
 
 ---
 
-## Kubernetes Deployment on EKS
+##  Kubernetes Deployment on EKS
 
 ### 1. Created EKS Cluster
 
@@ -76,7 +82,7 @@ kubectl apply -f nodejs-app-deployment.yaml
 
 ---
 
-## CI/CD Pipeline with Jenkins
+##  CI/CD Pipeline with Jenkins
 
 ### 1. Setup Jenkins EC2
 
@@ -99,7 +105,7 @@ kubectl apply -f nodejs-app-deployment.yaml
 
 ---
 
-## Files Structure
+##  Files Structure
 
 ```
 Eyego-Ai-Task/
@@ -111,10 +117,19 @@ Eyego-Ai-Task/
 
 ---
 
-## Output
+##  Output
 
 Application accessible via:
 
 ```
-http://<LoadBalancer-DNS-URL>
+http://ab1cb9de95b9a4850839565e344ebcb8-655966472.ap-southeast-2.elb.amazonaws.com
 ```
+
+---
+
+📄 **Proof of Work**
+
+All steps, screenshots, and execution timestamps are available in the following PDF:
+
+https://drive.google.com/file/d/1ugZwQOSABlh2dE_4PYwxn4jLO4UshyGq/view?usp=drive_link
+
